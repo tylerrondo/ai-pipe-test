@@ -3,112 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сложение целых чисел</title>
+  <title>Сложение трех целых чисел</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f4f6f8;
-    }
-    .card {
-      background: #ffffff;
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      width: 100%;
-      max-width: 360px;
-    }
-    h1 {
-      font-size: 20px;
-      margin-top: 0;
-      margin-bottom: 20px;
-      color: #1e293b;
-      text-align: center;
-    }
-    .input-group { margin-bottom: 16px; }
-    label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; color: #475569; }
-    input {
-      width: 100%;
-      padding: 10px 12px;
-      font-size: 16px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      box-sizing: border-box;
-      outline: none;
-    }
-    input:focus { border-color: #2563eb; }
-    button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #ffffff;
-      background-color: #2563eb;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 8px;
-    }
-    button:hover { background-color: #1d4ed8; }
-    .result {
-      margin-top: 24px;
-      padding: 14px;
-      background-color: #f1f5f9;
-      border-radius: 6px;
-      font-size: 16px;
-      color: #0f172a;
-      text-align: center;
-      font-weight: 500;
-    }
-    .error { color: #dc2626; background-color: #fee2e2; }
+    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f4f6f8; }
+    .card { background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%; max-width: 360px; }
+    h1 { font-size: 20px; text-align: center; margin-bottom: 20px; }
+    input { width: 100%; padding: 10px; margin-bottom: 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
+    button { width: 100%; padding: 12px; font-weight: bold; color: #fff; background: #2563eb; border: none; border-radius: 6px; cursor: pointer; }
+    .result { margin-top: 20px; padding: 12px; background: #f1f5f9; border-radius: 6px; text-align: center; font-weight: bold; }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Сложение целых чисел</h1>
-    <div class="input-group">
-      <label for="num1">Первое число:</label>
-      <input type="number" id="num1" step="1" placeholder="Введите целое число">
-    </div>
-    <div class="input-group">
-      <label for="num2">Второе число:</label>
-      <input type="number" id="num2" step="1" placeholder="Введите целое число">
-    </div>
-    <button id="calc-btn" onclick="calculateSum()">Сложить</button>
+    <h1>Сложение трех целых чисел</h1>
+    <input type="number" id="num1" step="1" placeholder="Первое число">
+    <input type="number" id="num2" step="1" placeholder="Второе число">
+    <input type="number" id="num3" step="1" placeholder="Третье число">
+    <button onclick="calculateSum()">Сложить</button>
     <div id="result" class="result" style="display: none;"></div>
   </div>
-
   <script>
     function calculateSum() {
-      const val1 = document.getElementById('num1').value.trim();
-      const val2 = document.getElementById('num2').value.trim();
-      const resultDiv = document.getElementById('result');
-
-      if (val1 === '' || val2 === '') {
-        resultDiv.textContent = 'Пожалуйста, введите оба числа';
-        resultDiv.className = 'result error';
-        resultDiv.style.display = 'block';
-        return;
-      }
-
-      const num1 = Number(val1);
-      const num2 = Number(val2);
-
-      if (!Number.isInteger(num1) || !Number.isInteger(num2)) {
-        resultDiv.textContent = 'Числа должны быть целыми';
-        resultDiv.className = 'result error';
-        resultDiv.style.display = 'block';
-        return;
-      }
-
-      const sum = num1 + num2;
-      resultDiv.textContent = `Результат: ${sum}`;
-      resultDiv.className = 'result';
-      resultDiv.style.display = 'block';
+      const n1 = Number(document.getElementById('num1').value);
+      const n2 = Number(document.getElementById('num2').value);
+      const n3 = Number(document.getElementById('num3').value);
+      const res = document.getElementById('result');
+      res.textContent = 'Результат: ' + (n1 + n2 + n3);
+      res.style.display = 'block';
     }
   </script>
 </body>
