@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сложение целых чисел</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f4f6f8; }
+    .card { background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); width: 320px; }
+    input { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 6px; }
+    button { width: 100%; padding: 12px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 8px; }
+    .result { margin-top: 16px; padding: 12px; background: #e2e8f0; border-radius: 6px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3 style="margin-top:0">Сложение целых чисел</h3>
+    <input type="number" id="n1" step="1" placeholder="Первое целое число">
+    <input type="number" id="n2" step="1" placeholder="Второе целое число">
+    <button onclick="calc()">Сложить</button>
+    <div id="res" class="result" style="display:none"></div>
+  </div>
+  <script>
+    function calc() {
+      const a = Number(document.getElementById('n1').value);
+      const b = Number(document.getElementById('n2').value);
+      const res = document.getElementById('res');
+      res.textContent = 'Результат: ' + (a + b);
+      res.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
