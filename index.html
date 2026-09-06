@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сложение трех целых чисел</title>
+  <title>Сложение двух целых чисел</title>
   <style>
     body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f4f6f8; }
     .card { background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%; max-width: 360px; }
@@ -15,10 +15,9 @@
 </head>
 <body>
   <div class="card">
-    <h1>Сложение трех целых чисел</h1>
+    <h1>Сложение двух целых чисел</h1>
     <input type="number" id="num1" step="1" placeholder="Первое число">
     <input type="number" id="num2" step="1" placeholder="Второе число">
-    <input type="number" id="num3" step="1" placeholder="Третье число">
     <button onclick="calculateSum()">Сложить</button>
     <div id="result" class="result" style="display: none;"></div>
   </div>
@@ -26,9 +25,8 @@
     function calculateSum() {
       const n1 = Number(document.getElementById('num1').value);
       const n2 = Number(document.getElementById('num2').value);
-      const n3 = Number(document.getElementById('num3').value);
       const res = document.getElementById('result');
-      res.textContent = 'Результат: ' + (n1 + n2 + n3);
+      res.textContent = 'Результат: ' + (n1 + n2);
       res.style.display = 'block';
     }
   </script>
